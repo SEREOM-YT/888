@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 30, 30, 30;
+  --background-end-rgb: 20, 20, 20;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+
+.chess-board {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1;
+}
+
+.chess-piece {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chess-piece:hover {
+  transform: scale(1.1);
+}
+
+.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.player-red {
+  color: theme('colors.player-red');
+}
+
+.player-white {
+  color: theme('colors.player-white');
+}
+
+.player-black {
+  color: theme('colors.player-black');
+}
